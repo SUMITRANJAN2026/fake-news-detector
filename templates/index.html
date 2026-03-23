@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fake News Detector</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Card */
+.container {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 60%;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    padding: 12px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Button */
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    background: linear-gradient(45deg, #00c9ff, #92fe9d);
+    color: black;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00c9ff;
+}
+
+/* Result */
+.result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    animation: pop 0.5s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🧠 AI Fake News Detector</h1>
+
+    <form method="POST">
+        <textarea name="news" placeholder="Paste your news here..."></textarea>
+        <br>
+        <button type="submit">🚀 Analyze</button>
+    </form>
+
+    <div class="result">
+        {{ prediction }}
+    </div>
+</div>
+
+</body>
+</html>
